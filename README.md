@@ -98,6 +98,43 @@ The best indicator that someone will default is any sort of precedence in their 
 Higher credit limits and stronger repayment ratios correlate with lower
 default probability.
 
+### Recall Comparison
+
+<p align="center">
+  <img src="media/FiguresForEvaluation/04_recall_bars.png" width="650"/>
+</p>
+
+The best-performing configuration achieves a recall of approximately **63%**, meaning that nearly two-thirds of actual default cases are correctly identified. In credit risk modeling, recall is especially important because missing a defaulter (false negative) is typically more costly than incorrectly flagging a non-defaulter. Among all tested configurations, the balance-aware XGBoost model achieved the highest recall, making it the strongest model for minority-class detection.
+
+
+
+### ROC Curve Comparison
+
+<p align="center">
+  <img src="media/FiguresForEvaluation/roc_curves_all.png" width="650"/>
+</p>
+
+All models outperform random guessing (diagonal baseline), with XGBoost variants achieving the highest overall ROC-AUC, indicating superior discrimination between defaulters and non-defaulters.
+
+
+
+### Feature Importance – Logistic Regression (FE + Balanced)
+
+<p align="center">
+  <img src="media/FiguresForEvaluation/LR_FE_Bal_LR_coef_importance.png" width="650"/>
+</p>
+
+Standardized coefficients highlight the importance of delinquency-related variables such as `late_payment_count` and recent repayment status. Logistic Regression offers clear interpretability via odds-ratio interpretation.
+
+
+
+### Feature Importance – XGBoost (FE + Balanced)
+
+<p align="center">
+  <img src="media/FiguresForEvaluation/XGB_FE_Bal_shap_summary_bar.png" width="650"/>
+</p>
+
+SHAP-based feature importance confirms that delinquency signals dominate predictive performance. While XGBoost achieves slightly higher predictive accuracy, interpretability requires post-hoc explanation techniques.
 
 ## Repository Structure
 
@@ -131,7 +168,7 @@ Install:
 
     pip install -r requirements.txt
 
-------------------------------------------------------------------------
+
 
 ## Run
 
