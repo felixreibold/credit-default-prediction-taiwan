@@ -101,7 +101,7 @@ default probability.
 ### Recall Comparison
 
 <p align="center">
-  <img src="media/FiguresForEvaluation/04_recall_bars.png" width="650"/>
+  <img src="media/FiguresForEvaluation/04_recall_bars.png" width="350"/>
 </p>
 
 The best-performing configuration achieves a recall of approximately **63%**, meaning that nearly two-thirds of actual default cases are correctly identified. In credit risk modeling, recall is especially important because missing a defaulter (false negative) is typically more costly than incorrectly flagging a non-defaulter. Among all tested configurations, the balance-aware XGBoost model achieved the highest recall, making it the strongest model for minority-class detection.
@@ -111,7 +111,7 @@ The best-performing configuration achieves a recall of approximately **63%**, me
 ### ROC Curve Comparison
 
 <p align="center">
-  <img src="media/FiguresForEvaluation/roc_curves_all.png" height="300"/>
+  <img src="media/FiguresForEvaluation/roc_curves_all.png" width="350"/>
 </p>
 
 All models outperform random guessing (diagonal baseline), with XGBoost variants achieving the highest overall ROC-AUC, indicating superior discrimination between defaulters and non-defaulters.
