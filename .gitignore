@@ -1,0 +1,18 @@
+﻿# Virtual environment
+venv/
+
+# IDE
+.idea/
+.DS_Store
+__MACOSX/
+
+# Generated outputs
+Containment/
+models/
+preds/
+xtest/
+experiment_results.*
+overnight_results.*
+
+# Raw dataset
+taiwan_credit.csv
